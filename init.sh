@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ ! -e /novel/.narou ]; then
+if [ ! -e /home/narou/novel/.narou ]; then
   mkdir .narou
   mkdir -p .narousetting
   {
@@ -17,7 +17,6 @@ if [ ! -e /novel/.narou ]; then
   } | tee .narousetting/server_setting.yaml
 
   narou s convert.no-open=true
-  narou s device=kindle
 fi
 
 exec "$@"
