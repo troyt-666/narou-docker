@@ -4,7 +4,7 @@ ARG NAROU_VERSION=3.8.2
 ARG AOZORAEPUB3_VERSION=1.1.1b22Q
 ARG AOZORAEPUB3_FILE=AozoraEpub3-${AOZORAEPUB3_VERSION}
 
-COPY narou-3.8.3.patch /tmp
+COPY narou-3.8.2.patch /tmp
 
 RUN gem install narou -v ${NAROU_VERSION} --no-document && \
     wget https://github.com/kyukyunyorituryo/AozoraEpub3/releases/download/v${AOZORAEPUB3_VERSION}/${AOZORAEPUB3_FILE}.zip && \
