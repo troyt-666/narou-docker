@@ -5,7 +5,7 @@ if [ ! -e /home/narou/novel/.narou ]; then
   mkdir -p .narousetting
   {
     echo "---";
-    echo 'aozoraepub3dir: "/etc/aozoraepub3"';
+    echo 'aozoraepub3dir: "/opt/aozoraepub3"';
     echo 'over18: true';
     echo 'server-port: 33000';
     echo 'server-bind: 0.0.0.0';
