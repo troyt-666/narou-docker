@@ -4,11 +4,13 @@ ARG NAROU_VERSION=3.8.2
 ARG AOZORAEPUB3_VERSION=1.1.1b22Q
 ARG AOZORAEPUB3_FILE=AozoraEpub3-${AOZORAEPUB3_VERSION}
 
+COPY narou-3.8.3.patch /tmp
+
 RUN gem install narou -v ${NAROU_VERSION} --no-document && \
     wget https://github.com/kyukyunyorituryo/AozoraEpub3/releases/download/v${AOZORAEPUB3_VERSION}/${AOZORAEPUB3_FILE}.zip && \
     unzip ${AOZORAEPUB3_FILE} -d ${AOZORAEPUB3_FILE} && \
     mv ${AOZORAEPUB3_FILE} /opt/aozoraepub3 && \
-    patch -u -p0 --ignore-whitespace -d /usr/local/bundle/gems/narou-3.8.2 < narou-3.8.2.patch && \
+    patch -u -p0 --ignore-whitespace -d /usr/local/bundle/gems/narou-3.8.2 < /tmp/narou-3.8.2.patch && \
     wget https://github.com/rogenobl/narou/releases/download/p0.4/pagination_with_fix.zip && \
     wget https://github.com/rogenobl/narou/releases/download/v0.2/sitesettinghandler.zip && \
     unzip sitesettinghandler.zip && cd sitesettinghandler && cp -r * /usr/local/bundle/gems/narou-3.8.2/ && \
