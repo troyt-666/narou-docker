@@ -9,7 +9,6 @@ Narou.rb を Docker で実行するための Docker イメージ<br>
 - Alpine Linux 3.19
 - Ruby 3.3.0
 - [改造版 AozoraEpub3](https://github.com/kyukyunyorituryo/AozoraEpub3) から AozoraEpub3-1.1.1b23Q.zip
-- kindlegen 2.9 (正規ダウンロードじゃない)
 
 # 使い方
 
