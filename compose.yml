@@ -1,15 +1,14 @@
-version: "3"
 services:
   narou:
     build:
       context: .
       dockerfile: dockerfile
       args:
-        NAROU_VERSION: 3.8.2
+        NAROU_VERSION: 3.9.0
         AOZORAEPUB3_VERSION: 1.1.1b23Q
         UID: 1000
         GID: 1000
-    image: kokotaro/narou:3.8.2
+    image: kokotaro/narou:3.9.0
     command: ["narou", "web", "-np", "33000"]
     volumes:
       - .:/home/narou/novel:cached
