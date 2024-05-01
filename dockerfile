@@ -1,7 +1,7 @@
-FROM ruby:3.3.0-bookworm as builder
+FROM ruby:3.3.1-bookworm as builder
 
 ARG NAROU_VERSION=3.9.0
-ARG AOZORAEPUB3_VERSION=1.1.1b23Q
+ARG AOZORAEPUB3_VERSION=1.1.1b24Q
 ARG AOZORAEPUB3_FILE=AozoraEpub3-${AOZORAEPUB3_VERSION}
 
 RUN gem install narou -v ${NAROU_VERSION} --no-document && \
@@ -17,7 +17,7 @@ RUN apk update && \
     --add-modules java.base,java.datatransfer,java.desktop \
     --output /opt/jre
 
-FROM ruby:3.3.0-alpine3.19
+FROM ruby:3.3.1-alpine3.19
 
 ARG UID=1000
 ARG GID=1000
