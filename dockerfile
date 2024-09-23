@@ -1,4 +1,4 @@
-FROM ruby:3.3.5-bookworm AS as builder
+FROM ruby:3.3.5-bookworm AS builder
 
 ARG NAROU_VERSION=3.9.1
 ARG AOZORAEPUB3_VERSION=1.1.1b26Q
