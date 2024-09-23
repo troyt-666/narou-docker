@@ -6,9 +6,9 @@ Narou.rb を Docker で実行するための Docker イメージ<br>
 
 # イメージの構成
 
-- Alpine Linux 3.19
-- Ruby 3.3.0
-- [改造版 AozoraEpub3](https://github.com/kyukyunyorituryo/AozoraEpub3) から AozoraEpub3-1.1.1b23Q.zip
+- Debian Linux
+- Ruby 3.3.5
+- [改造版 AozoraEpub3](https://github.com/kyukyunyorituryo/AozoraEpub3) から AozoraEpub3-1.1.1b26
 
 # 使い方
 
