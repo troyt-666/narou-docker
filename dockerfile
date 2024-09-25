@@ -6,12 +6,13 @@ ARG AOZORAEPUB3_FILE=AozoraEpub3-${AOZORAEPUB3_VERSION}
 
 RUN apt update && \
     curl -LO https://download.java.net/java/GA/jdk21/fd2272bbf8e04c3dbaee13770090416c/35/GPL/openjdk-21_linux-x64_bin.tar.gz && \
-    tar zxf openjdk-21_linux-x64_bin.tar.gz && mkdir /opt/jre && \   gem install narou -v ${NAROU_VERSION} --no-document && \
-    mv ./jdk-21/* /opt/jre && \
+    tar zxf openjdk-21_linux-x64_bin.tar.gz && mv jdk-21 /usr/local/jdk-21 && \
+    export JAVA_HOME=/usr/local/jdk-21 && \
+    export PATH=$PATH:$JAVA_HOME/bin && \
+    jlink --no-header-files --no-man-pages --compress=2 --add-modules java.base,java.datatransfer,java.desktop --output /opt/jre && \
     gem install narou -v ${NAROU_VERSION} --no-document && \
     wget https://github.com/kyukyunyorituryo/AozoraEpub3/releases/download/v${AOZORAEPUB3_VERSION}/${AOZORAEPUB3_FILE}.zip && \
-    unzip ${AOZORAEPUB3_FILE} -d ${AOZORAEPUB3_FILE} && \
-    mv ${AOZORAEPUB3_FILE} /opt/aozoraepub3 
+    unzip ${AOZORAEPUB3_FILE} -d /opt/aozoraepub3
 
 FROM ruby:3.3.5-slim-bookworm
 
